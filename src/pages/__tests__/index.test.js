@@ -4,8 +4,8 @@ import { render } from '@testing-library/react';
 
 describe('Testing Homepage', () => {
   it('Should be rendered correctly', () => {
-    const { debug } = render(<HomePage />);
+    const { getByText } = render(<HomePage />);
 
-    debug();
+    expect(getByText(/Hello World/)).toBeInTheDocument();
   });
 });
