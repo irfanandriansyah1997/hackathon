@@ -1,4 +1,4 @@
-const { isNotEmpty, isNumber, isString } = require('@utils/validator');
+import { isNotEmpty, isNumber, isString } from '@utils/validator';
 
 describe('Testing Validator Helper File', () => {
   describe('Testing method is not empty', () => {
