@@ -1,0 +1,22 @@
+{
+  "name": "hack2020",
+  "version": "1.0.0",
+  "private": true,
+  "description": "hack2020",
+  "author": "Irfan Andriansyah",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^4.5.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
