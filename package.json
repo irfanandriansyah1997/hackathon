@@ -8,15 +8,65 @@
     "gatsby"
   ],
   "scripts": {
+    "init": "husky install",
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lint-staged": "lint-staged",
+    "eslint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
+    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
+    "test": "is-ci \"test:coverage\" \"test:watch\"",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
+    "lint": "jest --config etc/jest/jest.lint.js",
+    "test:server": "jest --config etc/jest/jest.server.js",
+    "test:dom": "jest --config etc/jest/jest.client.js"
+  },
+  "lint-staged": {
+    "./src/**/*.{ts,js,jsx,tsx}": [
+      "yarn lint --fix",
+      "yarn format"
+    ]
   },
   "dependencies": {
+    "@chakra-ui/gatsby-plugin": "^2.0.2",
+    "@chakra-ui/react": "^1.7.4",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "framer-motion": "^5.6.0",
     "gatsby": "^4.5.2",
+    "gatsby-plugin-alias-imports": "^1.0.5",
+    "gatsby-plugin-emotion": "^7.5.0",
+    "gatsby-plugin-react-helmet": "^5.5.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "11.0.0",
+    "@commitlint/config-conventional": "11.0.0",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@testing-library/user-event": "^13.5.0",
+    "babel-jest": "^27.4.6",
+    "babel-preset-gatsby": "^2.5.1",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint-config-react-app": "^7.0.0",
+    "git-cz": "^4.8.0",
+    "husky": "^7.0.4",
+    "is-ci-cli": "^2.2.0",
+    "jest": "^27.4.7",
+    "jest-environment-jsdom": "27.3.1",
+    "jest-localstorage-mock": "2.4.18",
+    "jest-runner-eslint": "1.0.0",
+    "jest-watch-select-projects": "2.0.0",
+    "jest-watch-typeahead": "1.0.0",
+    "lint-staged": "^12.1.7",
+    "prettier": "^2.5.1"
   }
 }

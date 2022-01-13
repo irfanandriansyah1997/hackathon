@@ -1,0 +1,5 @@
+public/
+node_modules/
+jest.config.js
+commitlint.config.js
+.cache/
